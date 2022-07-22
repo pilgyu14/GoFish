@@ -239,7 +239,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 77417917}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -852,7 +852,7 @@ MonoBehaviour:
   SmoothTime: 0.2
   _curViewType: 0
   wheelspeed: 30
-  _moveSpeed: 30
+  _moveSpeed: 60
   _minZoom: 5
   _maxZoom: 50
   timeScale: 0
@@ -864,6 +864,7 @@ MonoBehaviour:
   _maxCamPos: {x: 16, y: 32}
   ease: 0
   time: 0.3
+  _testSpeed: 10
 --- !u!1 &1044883619
 GameObject:
   m_ObjectHideFlags: 0

@@ -120,6 +120,7 @@ public class CameraController : MonoBehaviour
             x += Input.GetAxis("Mouse X") * _moveSpeed * Time.unscaledDeltaTime; // 마우스의 좌우 이동량을 xmove 에 누적
             y += Input.GetAxis("Mouse Y") * _moveSpeed * Time.unscaledDeltaTime; // 마우스의 상하 이동량을 ymove 에 누적
 
+
             targetPos = new Vector3(x * xDragDir, targetPos.y, y * yDragDir);
             //transform.position = Vector3.SmoothDamp(transform.position, reverseDistance, ref velocity, SmoothTime);
         }
@@ -143,22 +144,22 @@ public class CameraController : MonoBehaviour
     private bool isMove = false;
     private void CheckCamPos()
     {
-        if (transform.position.x < _minCamPos.x)
+        if (transform.localPosition.x < _minCamPos.x)
         {
             targetPos.x = _minCamPos.x;
             isMove = true;
         }
-        if (transform.position.x > _maxCamPos.x)
+        if (transform.localPosition.x > _maxCamPos.x)
         {
             targetPos.x = _maxCamPos.x;
             isMove = true;
         }
-        if (transform.position.z < _minCamPos.y)
+        if (transform.localPosition.z < _minCamPos.y)
         {
             targetPos.z = _minCamPos.y;
             isMove = true;
         }
-        if (transform.position.z > _maxCamPos.y)
+        if (transform.localPosition.z > _maxCamPos.y)
         {
             targetPos.z = _maxCamPos.y;
             isMove = true;
@@ -166,6 +167,7 @@ public class CameraController : MonoBehaviour
 
         if(isMove == true)
         {
+            //StartCoroutine(MoveLimitPos());
             Sequence seq = DOTween.Sequence();
             seq.Append(transform.DOLocalMove(targetPos, time).SetEase(ease));
             seq.AppendCallback(() => isMove = false);
@@ -174,6 +176,17 @@ public class CameraController : MonoBehaviour
         //transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, SmoothTime);
     }
 
+    [Header("테스트 스피드"), SerializeField]
+    private float _testSpeed = 10f; 
+    IEnumerator MoveLimitPos()
+    {
+        while((transform.localPosition - targetPos).sqrMagnitude > 0.01f)
+        {
+                transform.localPosition = Vector3.Lerp(transform.localPosition, targetPos, _testSpeed * Time.deltaTime);
+                yield return null; 
+        }
+        isMove = false; 
+    }
     #region 음
     /*
     private void ChangeViewType()
