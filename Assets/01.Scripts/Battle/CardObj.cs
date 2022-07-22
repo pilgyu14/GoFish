@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CardObj : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
         

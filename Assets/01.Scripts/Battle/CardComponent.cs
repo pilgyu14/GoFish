@@ -14,12 +14,10 @@ public class CardComponent : MonoBehaviour
     private CardObj _cardObj;
     [SerializeField]
     private DeckDataSO _deckDataSO; 
-    
-    
 
     public void SetCard()
     {
-
+                           
     }
 
 }
