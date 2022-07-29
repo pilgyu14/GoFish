@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "SO/Battle/DeckDataSO")]
-public class DeckDataSO : ScriptableObject
+public class CardDataSO : ScriptableObject
 {
     public List<CardData> cardDataList = new List<CardData>(); 
+
+    public void ClearDeck()
+    {
+        cardDataList.Clear(); 
+    }
 }

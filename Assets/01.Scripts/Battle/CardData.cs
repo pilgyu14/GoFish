@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System; 
 
 public enum UnitType
 {
@@ -9,7 +10,9 @@ public enum UnitType
 
 public enum CardNamingType
 {
-    Carp, // 붕어
+    None, // 없음
+
+   Carp, // 붕어
    Goldfish,  // 금붕어
    Squid, // 오징어
    Blowfish, // 복어
@@ -17,11 +20,16 @@ public enum CardNamingType
    ElectricEll, // 전기 뱀장어 
 }
 
+// UI로 보여줄 카드 정보,
+// 소환시 UnitType으로 구분해서 소환 
+[Serializable]
 public class CardData
 {
-    public UnitType cardType; // 카드 타입
+    public UnitType unitType; // 유닛 타입
     public CardNamingType cardNamingType; // 각 카드 종류 
 
+    public SkinData skinData; 
+    
     public string name; // 이름
     public string description;  // 설명 
     public int cost; // 코스트 
