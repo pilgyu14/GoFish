@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using DG.Tweening;
 using UnityEngine.UI;
 
@@ -9,16 +10,30 @@ public class TitleOptionManager : MonoBehaviour
     public GameObject title;
     public GameObject option;
 
+    public void LoadStageScene()
+    {
+
+    }
+
+    public void LoadTutorialScene()
+    {
+
+    }
+
     public void OptionButton()
     {
-        title.transform.DOLocalMoveX(-2000, 0.5f);
-        option.transform.DOLocalMoveX(0, 0.5f);
+        //title.transform.DOLocalMoveX(-2000, 0.5f);
+        //option.transform.DOLocalMoveX(0, 0.5f);
+        title.transform.DOLocalMoveX(-2100, 0.4f).OnComplete(() => { title.transform.DOLocalMoveX(-2000, 0.15f); });
+        option.transform.DOLocalMoveX(-100, 0.4f).OnComplete(() => { option.transform.DOLocalMoveX(0, 0.15f); });
     }
 
     public void TitleButton()
     {
-        title.transform.DOLocalMoveX(0, 0.5f);
-        option.transform.DOLocalMoveX(2000, 0.5f);
+        //title.transform.DOLocalMoveX(0, 0.5f);
+        //option.transform.DOLocalMoveX(2000, 0.5f);
+        title.transform.DOLocalMoveX(100, 0.4f).OnComplete(() => { title.transform.DOLocalMoveX(0, 0.15f); });
+        option.transform.DOLocalMoveX(2100, 0.4f).OnComplete(() => { option.transform.DOLocalMoveX(2000, 0.15f); });
     }
 
     public void FullScreen()
