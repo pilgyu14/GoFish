@@ -12,12 +12,15 @@ public class UnitDataSO : ScriptableObject
     public bool isGroundAtk;
     
     [Header("스탯")]
-    public float moveSpeed;
-    public float hp;
-    public float cost;
+    public readonly float moveSpeed;
+    public readonly float hp;
+    public readonly float cost;
 
-    public float atk;
-    public float atkRange;
-    public float atkDelay;
-    public float sightRange;
+    [Header("공격관련")]
+    public readonly float atkDamage;
+    public readonly float atkRange;
+    public readonly float beforeDelay;
+    public readonly float afterDelay;
+    public float atkSpeed => 1 / (beforeDelay + afterDelay);
+    public readonly float sightRange;
 }

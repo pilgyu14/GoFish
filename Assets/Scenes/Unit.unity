@@ -166,7 +166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 849558cbad1429f41922125a5b774649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitScript: {fileID: 0}
   transitions: []
 --- !u!1 &569298820
 GameObject:
@@ -346,6 +345,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitData: {fileID: 11400000, guid: aa3347ffeec16ea4f9bb6a2ca70af786, type: 2}
   unitAI: {fileID: 569298822}
+  unitAnimation: {fileID: 0}
+  unitAttack: {fileID: 0}
 --- !u!1 &1530562832
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +627,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec752d7071aeb824aac5c1583193c7fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitScript: {fileID: 1337252628}
   transitions:
   - {fileID: 1569452730}
+--- !u!1 &2007688306
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2007688307}
+  - component: {fileID: 2007688308}
+  m_Layer: 0
+  m_Name: PoolManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2007688307
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007688306}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2007688308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007688306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dc28ed03e149bc4ebab50bfd083cdf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
