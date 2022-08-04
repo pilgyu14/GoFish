@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
 
-public class CardObj : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class CardObj : MonoBehaviour, IPointerClickHandler 
 {
     [SerializeField]
     private Image _cardImage;
@@ -47,13 +47,13 @@ public class CardObj : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         _battleManager.CardComponent.CancelCard(this);
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    /// <summary>
+    /// 클릭시 1회 실행 
+    /// </summary>
+    /// <param name="eventData"></param>
+    public void OnPointerClick(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+        _battleManager.CardComponent
     }
 
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
-    }
 }

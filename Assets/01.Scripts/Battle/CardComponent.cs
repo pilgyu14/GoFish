@@ -19,9 +19,19 @@ public class CardComponent : MonoBehaviour
     [SerializeField]
     private Transform _cardInventory; // 화면 하단의 카드 저장소 
 
+    private List<DroppableUI> _slotList = new List<DroppableUI>(); 
     private void Start()
     {
-        
+        SetSlots(); 
+    }
+    private void SetSlots()
+    {
+        int count = _cardInventory.childCount; 
+        for (int i = 0;i < count;i++)
+        {
+            DroppableUI droppableUI = _cardInventory.GetChild(i).GetComponent<DroppableUI>();
+            _slotList.Add(droppableUI);
+        }
     }
     public void SetCard()
     {
@@ -33,13 +43,17 @@ public class CardComponent : MonoBehaviour
     /// </summary>
     private void SetDeckCard()
     {
+        foreach(var slot in _slotList)
+        {
+            CardData cardData = slot.transform.Find("CardObj").GetComponent<CardObj>().CardData; 
+        }
         int count = _cardInventory.childCount; // 슬롯 개수 
         for(int i =0; i < count; i++)
         {
             Transform slot = _cardInventory.GetChild(i);
             if(slot.childCount > 0) // 슬롯에 장착된 카드가 있으면 
             {
-                CardData cardData = slot.GetChild(0).GetComponent<CardObj>().CardData;
+                CardData cardData = slot.Find("CardObj").GetComponent<CardObj>().CardData;
             }
         }
         //int count = _cardDeckSO.cardDatas.Count;
