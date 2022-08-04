@@ -53,7 +53,7 @@ public class CardObj : MonoBehaviour, IPointerClickHandler
     /// <param name="eventData"></param>
     public void OnPointerClick(PointerEventData eventData)
     {
-        _battleManager.CardComponent
+        //_battleManager.CardComponent
     }
 
 }

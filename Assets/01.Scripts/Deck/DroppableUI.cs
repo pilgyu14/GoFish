@@ -55,7 +55,8 @@ public class DroppableUI : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
     /// </summary>
     private void CheckDroppedItme()
     {
-        if(transform.childCount > 0) // 장착된 아이템이 있을 경우 
+        Transform cardObj = transform.Find("CardObj");
+        if(cardObj != null) // 장착된 아이템이 있을 경우 
         {
             _isDroppedItem = true;
             return; 
@@ -96,6 +97,7 @@ public class DroppableUI : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
             Debug.Log("O");
             //eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = rectTrm.anchoredPosition;
             eventData.pointerDrag.transform.SetParent(transform);
+            eventData.pointerDrag.transform.SetAsLastSibling(); 
             _isDroppedItem = true; 
         }
     }

@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class CardComponent : MonoBehaviour
 {
+
+    private List<CardObj> _cardList = new List<CardObj>();
+    private List<DroppableUI> _slotList = new List<DroppableUI>();
     public List<CardObj> CardList => _cardList;
 
-    private List<CardObj> _cardList = new List<CardObj>(); 
-    
+
     [SerializeField]
     private CardObj _cardObj;
     [SerializeField]
@@ -18,8 +20,10 @@ public class CardComponent : MonoBehaviour
 
     [SerializeField]
     private Transform _cardInventory; // 화면 하단의 카드 저장소 
+    [SerializeField]
+    private GameObject _summonImage; // 소환될 위치 강조이미지 
 
-    private List<DroppableUI> _slotList = new List<DroppableUI>(); 
+
     private void Start()
     {
         SetSlots(); 
@@ -45,23 +49,12 @@ public class CardComponent : MonoBehaviour
     {
         foreach(var slot in _slotList)
         {
-            CardData cardData = slot.transform.Find("CardObj").GetComponent<CardObj>().CardData; 
-        }
-        int count = _cardInventory.childCount; // 슬롯 개수 
-        for(int i =0; i < count; i++)
-        {
-            Transform slot = _cardInventory.GetChild(i);
-            if(slot.childCount > 0) // 슬롯에 장착된 카드가 있으면 
+            Transform cardObj = slot.transform.Find("CardObj"); 
+            if(cardObj != null)
             {
-                CardData cardData = slot.Find("CardObj").GetComponent<CardObj>().CardData;
+                CardData cardData = cardObj.GetComponent<CardObj>().CardData;
             }
         }
-        //int count = _cardDeckSO.cardDatas.Count;
-        //for (int i = 0; i < count; i++)
-        //{
-        //    CardData cardData = _cardDeckSO.cardDatas[i];
-        //    _deckData.Add_CardData(cardData);
-        //}
     }
     
     /// <summary>
@@ -71,6 +64,11 @@ public class CardComponent : MonoBehaviour
     private void OnCheckStage(BattleStageType battleStageType)
     {
         StageManager.Instance.CurrentStageData = _stageDataListSO._stageDataList.Find((x) => x._stageType == battleStageType);
+    }
+
+    public void SelectCard()
+    {
+        _summonImage.SetActive(true); 
     }
     /// <summary>
     /// 덱에 카드 추가 
