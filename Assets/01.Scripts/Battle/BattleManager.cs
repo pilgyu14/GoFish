@@ -9,7 +9,8 @@ public class BattleManager : MonoBehaviour
     [Header("Ä«µå"), SerializeField]
     private CardComponent _cardComponent;
 
-
+    
+    public CardComponent CardComponent => _cardComponent; 
 
     private void Start()
     {
