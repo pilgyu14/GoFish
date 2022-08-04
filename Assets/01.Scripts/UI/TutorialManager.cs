@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class TutorialManager : MonoBehaviour
 {
     public string[] tutorialContents;
 
     public Button NextTutorialButton;
-    public Text NextTutorialButtonText;
+    public TextMeshProUGUI NextTutorialButtonText;
     public int currentTutorial = 1;
-    public Text tutorialText;
+    public TextMeshProUGUI tutorialText;
 
     private bool isSpawn; //스폰 튜토리얼 클리어
     private bool isKill; //적 잡기 튜토리얼 클리어
