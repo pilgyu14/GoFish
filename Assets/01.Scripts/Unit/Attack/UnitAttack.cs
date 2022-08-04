@@ -7,7 +7,8 @@ public abstract class UnitAttack : MonoBehaviour
     protected UnitScript unit;
     protected UnitDataSO Data => unit.UnitData;
     protected UnitAnimation Animation => unit.Animation;
-    protected bool isCanAttack;
+    protected bool isCanAttack = true;
+    public bool IsCanAttack => isCanAttack;
 
     protected virtual void Awake()
     {

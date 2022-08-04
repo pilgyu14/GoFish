@@ -10,8 +10,6 @@ public class UnitAI : MonoBehaviour
     [SerializeField] private UnitState currentState = null;
     private bool isUpdate = false; //true일때 ActionUpdate()와 CheckTransition()을 실행함
 
-    public int frame = 0; //디버그용
-
     private void Awake()
     {
         unit = transform.GetComponentInParent<UnitScript>();
@@ -25,7 +23,6 @@ public class UnitAI : MonoBehaviour
 
     private void Update()
     {
-        frame++;
         if(isUpdate)
         {
             currentState.ActionUpdate();

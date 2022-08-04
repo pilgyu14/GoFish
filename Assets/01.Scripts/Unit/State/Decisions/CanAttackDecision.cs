@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestDecisions : UnitDecision
+public class CanAttackDecision : UnitDecision
 {
     public override bool MakeADecision()
     {
-        return true;
+        return ai.Unit.UnitAttack.IsCanAttack;
     }
 }

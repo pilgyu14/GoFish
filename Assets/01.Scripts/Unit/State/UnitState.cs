@@ -5,6 +5,8 @@ using UnityEngine;
 public abstract class UnitState : MonoBehaviour
 {
     protected UnitAI ai;
+    public UnitAI AI => ai;
+    public UnitScript unit => ai.Unit;
     [SerializeField] List<UnitTransition> transitions;
 
     private void Awake()
@@ -25,6 +27,7 @@ public abstract class UnitState : MonoBehaviour
             if (transition.CheckDecisions())
             {
                 ai.ChangeState(transition.NextState);
+                break;
             }
         }
     }

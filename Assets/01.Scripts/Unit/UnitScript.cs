@@ -20,46 +20,35 @@ public class UnitScript : PoolableObject
 
     #region 현재상태
     protected float currentHP = 0;
-    protected UnitScript target;
+    protected float currentSpeed = 0;
+    private UnitScript target;
+    public UnitScript Target => target;
     #endregion
-
-
 
     protected virtual void Update()
     {
-        FindTarget(unitData);
+        FindTarget();
     }
 
-    protected void Move()
+    public void Move(Vector3 pos)
     {
-        Vector3 dir = (target.transform.position - transform.position).normalized;
+        Vector3 dir = (pos - transform.position).normalized;
         dir.y = 0;
-        transform.position += dir * unitData.moveSpeed * Time.deltaTime;
+        transform.position += dir * currentSpeed * Time.deltaTime;
+        unitAnimation.WalkAnimation(currentSpeed, unitData.moveSpeed);
     }
+
 
     /// <summary>
     /// 리스트에서 가장 가까운 타겟을 찾음
     /// </summary>
-    protected void FindTarget(UnitDataSO data)
+    private void FindTarget()
     {
-        if (target != null)
-        {
-            if (CheckDistance())
-            {
-                unitAttack.Attack(target);
-            }
-            else
-            {
-                Move();
-            }
-            return;
-        }
-
         float targetDistance = 0;
         bool isCanBeTarget = false;
 
         List<UnitScript> enemies;
-        if (!data.isHuman)
+        if (!unitData.isHuman)
         {
             enemies = UnitManager.Instance.HumanList;
         }
@@ -74,14 +63,14 @@ public class UnitScript : PoolableObject
                 targetDistance = Vector3.Distance(enemy.transform.position, transform.position);
                 if (targetDistance < unitData.sightRange)
                 {
-                    isCanBeTarget = CheckTarget(data, enemy);
+                    isCanBeTarget = CheckTarget(unitData, enemy);
                 }
             }
             else
             {
                 if (Vector3.Distance(enemy.transform.position, transform.position) < targetDistance)
                 {
-                    isCanBeTarget = CheckTarget(data, enemy);
+                    isCanBeTarget = CheckTarget(unitData, enemy);
                 }
             }
 
@@ -91,24 +80,11 @@ public class UnitScript : PoolableObject
     }
 
     /// <summary>
-    /// 공격 사거리 이내로 타겟이 들어왔다면 true를 반환
-    /// </summary>
-    protected bool CheckDistance()
-    {
-        if (target == null) return false;
-
-        if (Vector3.Distance(target.transform.position, transform.position) < unitData.atkRange)
-            return true;
-        else
-            return false;
-    }
-
-    /// <summary>
     /// 타겟팅 가능이면 ture, 아니면 false.
     /// </summary>
     /// <param name="data">내 데이터</param>
     /// <param name="enemy">적 데이터</param>
-    protected bool CheckTarget(UnitDataSO data, UnitScript enemy)
+    private bool CheckTarget(UnitDataSO data, UnitScript enemy)
     {
         if (!data.isSkyAtk && enemy.UnitData.isFly)
             return false;
@@ -117,6 +93,7 @@ public class UnitScript : PoolableObject
 
         return true;
     }
+
 
     public virtual void GetHit(float damage)
     {
@@ -127,13 +104,26 @@ public class UnitScript : PoolableObject
         }
     }
 
+    public virtual void GetSlowness(float percent, float time)
+    {
+        StartCoroutine(SlownessCoroutine(percent, time));
+    }
+
+    private IEnumerator SlownessCoroutine(float percent, float time)
+    {
+        float slowness = currentSpeed * percent * 0.01f;
+        currentSpeed -= slowness;
+        yield return new WaitForSeconds(time);
+        currentSpeed += slowness;
+    }
+
     public virtual void Die()
     {
         unitAnimation.DeathAnimation();
         StartCoroutine(DeathCoroutine());
     }
 
-    public IEnumerator DeathCoroutine()
+    private IEnumerator DeathCoroutine()
     {
         yield return new WaitForSeconds(1f);
         PoolManager.Instance.Push(this);
@@ -141,6 +131,8 @@ public class UnitScript : PoolableObject
 
     public override void Reset()
     {
+        StopAllCoroutines();
         currentHP = unitData.hp;
+        currentSpeed = unitData.moveSpeed;
     }
 }
