@@ -17,6 +17,7 @@ MonoBehaviour:
     cardNamingType: 0
     skinData:
       _skinType: 0
+    sprite: {fileID: 0}
     name: NULL
     description: X
     cost: 5
@@ -31,6 +32,7 @@ MonoBehaviour:
     cardNamingType: 1
     skinData:
       _skinType: 1
+    sprite: {fileID: 21300000, guid: d2134c437def18148949b3c18008b1e3, type: 3}
     name: "\uBD95\uC5B4"
     description: "\uBD95\uC5B4\uC785\uB2C8\uB2E4 "
     cost: 5
@@ -45,6 +47,7 @@ MonoBehaviour:
     cardNamingType: 2
     skinData:
       _skinType: 2
+    sprite: {fileID: 21300000, guid: b96e735f5987e2147bd3df03c347a106, type: 3}
     name: "\uAE08\uBD95\uC5B4"
     description: "\uCCB4\uB825\uC774 \uB192\uC544\uC694"
     cost: 10
@@ -59,6 +62,7 @@ MonoBehaviour:
     cardNamingType: 3
     skinData:
       _skinType: 3
+    sprite: {fileID: 21300000, guid: 44e4a5da514e54f4ba0e5e87d34cff0b, type: 3}
     name: "\uC624\uC9D5\uC5B4 "
     description: "\uC6D0\uAC70\uB9AC \uACF5\uACA9\uC744 \uD574\uC694"
     cost: 5
@@ -73,6 +77,7 @@ MonoBehaviour:
     cardNamingType: 4
     skinData:
       _skinType: 4
+    sprite: {fileID: 21300000, guid: 1bf04dbffe1bc01488bc2e1632c9abf6, type: 3}
     name: "\uBCF5\uC5B4"
     description: "\uC790\uD3ED\uD574\uC694"
     cost: 12
@@ -87,6 +92,7 @@ MonoBehaviour:
     cardNamingType: 5
     skinData:
       _skinType: 5
+    sprite: {fileID: 21300000, guid: e72566e61b5a9404da686a755a03c732, type: 3}
     name: "\uB0A0\uCE58"
     description: "\uACF5\uC911\uC720\uB2DB\uC774\uC5D0\uC694"
     cost: 10
@@ -101,6 +107,7 @@ MonoBehaviour:
     cardNamingType: 6
     skinData:
       _skinType: 6
+    sprite: {fileID: 21300000, guid: 2c87298b30f13ad4b81ffa0e655f715c, type: 3}
     name: "\uC804\uAE30\uBC40\uC7A5\uC5B4"
     description: "\uAE30\uC808\uC2DC\uCF1C\uC694"
     cost: 5

@@ -28,8 +28,9 @@ public class CardData
     public UnitType unitType; // 유닛 타입
     public CardNamingType cardNamingType; // 각 카드 종류 
 
-    public SkinData skinData; 
-    
+    public SkinData skinData;
+    public Sprite sprite; 
+
     public string name; // 이름
     public string description;  // 설명 
     public int cost; // 코스트 
