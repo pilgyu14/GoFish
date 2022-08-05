@@ -122,6 +122,7 @@ public class UnitScript : PoolableObject
     public void Die()
     {
         unitAnimation.DeathAnimation();
+        UnitManager.Instance.DeleteInList(this);
         StartCoroutine(DeathCoroutine());
     }
 

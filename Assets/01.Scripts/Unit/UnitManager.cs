@@ -37,6 +37,18 @@ public class UnitManager : MonoBehaviour
     public void SummonUnit(UnitScript unit, Vector3 pos)
     {
         UnitScript newUnit = PoolManager.Instance.Pop(unit) as UnitScript;
+        if (newUnit.UnitData.isHuman)
+            humanList.Add(newUnit);
+        else
+            fishList.Add(newUnit);
         newUnit.transform.position = pos;
+    }
+
+    public void DeleteInList(UnitScript unit)
+    {
+        if (unit.UnitData.isHuman)
+            humanList.Remove(unit);
+        else
+            fishList.Remove(unit);
     }
 }
