@@ -12,7 +12,7 @@ public class SummonComponent
     
     private CardObj _selectedCard; // 선택된(소환할) 카드
     private CardComponent _cardComponent;
-    private BattleManager _battleManager;
+    private CostComponent _costComponent;
     [SerializeField]
     private bool _isSummonable; // 소환가능한가 
 
@@ -30,15 +30,23 @@ public class SummonComponent
             _isSummonable = value;
         }
     }
-    public void Initialize( CardComponent cardComponent)
+    public void Initialize( CardComponent cardComponent, CostComponent costComponent)
     {
-        _cardComponent = cardComponent; 
+        _cardComponent = cardComponent;
+        _costComponent = costComponent;
     }
     public void UpdateSomething()
     {
         if(Input.GetMouseButtonDown(0) && _cardComponent.SelectedCard != null && _isSummonable == true) // 선택된 카드가 있고 좌클릭시 
         {
-            SummonUnit(); 
+            if(_costComponent.Money < _cardComponent.SelectedCard.CardData.cost) // 돈 부족시 
+            {
+                // 돈이 부족합니다 패널 
+                _costComponent.WarrningComponent.SetWarrning("돈이 부족합니다");
+                return; 
+            }
+            SummonUnit();
+            _costComponent.MinusMoney(_cardComponent.SelectedCard.CardData.cost);
         }
     }
 

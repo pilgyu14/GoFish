@@ -63,5 +63,7 @@ public class CardObj : PoolableObject, IPointerClickHandler
 
     public override void Reset()
     {
+        this.enabled = false;
+        GetComponent<DraggableUI>().enabled = true; 
     }
 }

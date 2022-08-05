@@ -33,6 +33,7 @@ public class CardData
     public string name; // 이름
     public string description;  // 설명 
     public int cost; // 코스트 
+    public float hp; // 체력 
     public float damage; // 공격력
     public float attackDelay; // 공격 딜레이
     public float moveSpeed; // 이동 속도 

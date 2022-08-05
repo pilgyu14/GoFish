@@ -45,6 +45,12 @@ public class LoadSceneManager : MonoBehaviour
     }
     #endregion
 
+    public void LoadBattleScene()
+    {
+        SceneLoadBase();
+        SceneManager.LoadScene("BattleScene");
+    }
+
     public void LoadTitleScene()
     {
         SceneLoadBase();
@@ -61,5 +67,6 @@ public class LoadSceneManager : MonoBehaviour
         //시간을 1로 되돌림
         Time.timeScale = 1f;
         //세이브 데이터에 접근하는 오브젝트들 제거
+        //EventManager.Instance.TriggerEvent(EventsType.ClearEvents); // 이벤트 초기화 
     }
 }

@@ -10,7 +10,7 @@ public class BattleManager : MonoBehaviour
     private CardComponent _cardComponent;
     [Header("º“»Ø"), SerializeField]
     private SummonComponent _summonComponent;
-
+    
     [SerializeField]
     private StageDataListSO _stageDataListSO;
 
@@ -30,9 +30,11 @@ public class BattleManager : MonoBehaviour
     private void Start()
     {
         _cardComponent.Initialize(this);
-        _summonComponent.Initialize(_cardComponent);
+        _summonComponent.Initialize(_cardComponent,_costComponent);
+        _costComponent.Initialize(this); 
 
-        StartCoroutine(SpawnEnemy()); 
+        StartCoroutine(SpawnEnemy());
+        StartCoroutine(AddMoney()); 
     }
     private void Update()
     {
@@ -43,6 +45,26 @@ public class BattleManager : MonoBehaviour
         _summonComponent.UpdateSomething();
     }
 
+    private IEnumerator AddMoney()
+    {
+        while (_isBattle == false)
+        {
+            yield return null;
+        }
+
+        float time = _costComponent.Time; 
+        WaitForSeconds waitForSeconds = new WaitForSeconds(time);
+
+        while (true)
+        {
+            if (_isBattle == false)
+            {
+                continue;
+            }
+            _costComponent.AddMoney(); 
+            yield return waitForSeconds;
+        }
+    }
     private IEnumerator SpawnEnemy()
     {
         while(_isBattle == false)

@@ -655,6 +655,7 @@ GameObject:
   - component: {fileID: 53490618}
   - component: {fileID: 53490617}
   - component: {fileID: 53490616}
+  - component: {fileID: 53490619}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -739,7 +740,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1243024066}
         m_TargetAssemblyTypeName: LoadSceneManager, Assembly-CSharp
-        m_MethodName: LoadStage1Scene
+        m_MethodName: LoadBattleScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -787,6 +788,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 53490614}
   m_CullTransparentMesh: 1
+--- !u!114 &53490619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53490614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30a5b19da6a889b4c83c3f379875c7ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventsTypes: 01000000
+  intParams: 00000000
 --- !u!1 &65725454
 GameObject:
   m_ObjectHideFlags: 0
@@ -8234,6 +8249,7 @@ GameObject:
   - component: {fileID: 1243024064}
   - component: {fileID: 1243024066}
   - component: {fileID: 1243024067}
+  - component: {fileID: 1243024068}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -8294,6 +8310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798a693e6892b5942b05266888f40427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stageDataListSO: {fileID: 11400000, guid: dae36c090c32514478e01beaa8f5ac50, type: 2}
   stageButtons:
   - {fileID: 53490616}
   - {fileID: 121729994}
@@ -8301,6 +8318,21 @@ MonoBehaviour:
   - {fileID: 80487848}
   - {fileID: 238642655}
   isClear: 0100000000
+--- !u!114 &1243024068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243024063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f17a07daa09743428b3680069cfc8f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinListSO: {fileID: 11400000, guid: 42e137e8c7630304699ef774e099db5b, type: 2}
+  skinType: 0
+  spriteRenderer: {fileID: 0}
 --- !u!1 &1272576724
 GameObject:
   m_ObjectHideFlags: 0

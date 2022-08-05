@@ -13,11 +13,13 @@ public class MoneySystem : MonoBehaviour
 
     public TextMeshProUGUI MoneyText;
     public GameObject Notext;
-    public int Money;
+    public static int Money;
 
-    void Start()
+    private BattleManager _battleManager;
+    public void Start()
     {
         Money = 0;
+        _battleManager = FindObjectOfType<BattleManager>(); 
         StartCoroutine("addMoney");
     }
 
@@ -45,11 +47,15 @@ public class MoneySystem : MonoBehaviour
 
 
 
-    IEnumerator addMoney()
+    public IEnumerator addMoney()
     {
-        yield return new WaitForSeconds(1f);
-        Money += 1;
-        StartCoroutine("addMoney");
+        while(true)
+        {
+        
+            yield return new WaitForSeconds(1f);
+            Money += 1;
+        }
+
     }
 
 }

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class StageButtonManager : MonoBehaviour
 {
+    [SerializeField]
+    private StageDataListSO _stageDataListSO; 
     public Button[] stageButtons;
 
     public bool[] isClear;
@@ -40,5 +42,18 @@ public class StageButtonManager : MonoBehaviour
                 stageButtons[i].interactable = false;
             }
         }
+        EventManager.Instance.StartListening(EventsType.MoveStage, (x) => OnCheckStage((int)x));
+    }
+
+    /// <summary>
+    /// (버튼 함수) 현재 스테이지 설정 
+    /// </summary>
+    /// <param name="battleStageType"></param>
+    public void OnCheckStage(int battleStageType)
+    {
+        string name = System.Enum.GetName(typeof(BattleStageType), (BattleStageType)battleStageType);
+        Debug.Log("스테이지가 설정 되었습니다" + name);
+        BattleStageType stageType = (BattleStageType)battleStageType;
+        StageManager.Instance.CurrentStageData = _stageDataListSO.stageDataList.Find((x) => x._stageType == stageType);
     }
 }

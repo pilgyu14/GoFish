@@ -16,7 +16,8 @@ public class CardGivenComponent
 
     public void Initialize()
     {
-        SetSlots(); 
+        SetSlots();
+        SetDeckData(); 
     }
     /// <summary>
     /// 슬롯 리스트에 추가 

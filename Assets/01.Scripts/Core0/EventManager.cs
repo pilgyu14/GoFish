@@ -6,6 +6,7 @@ using UnityEngine;
 public enum EventsType
 {
     SetDeckCard, // 덱카드설정(게임 시작시) 
+    MoveStage, //  스테이지 이동
     ClearEvents = 1000, 
 }
 
@@ -18,6 +19,7 @@ public class EventManager : MonoSingleton<EventManager>
     private void Start()
     {
         StartListening(EventsType.ClearEvents, ClearEvents);
+        Debug.Log("있잖아"); 
     }
 
     /// <summary>

@@ -12,6 +12,7 @@ public class CardComponent
     private List<DroppableUI> _slotList = new List<DroppableUI>();
 
     private BattleManager _battleManager;
+    [SerializeField]
     private CardObj _selectedCard; // 선택된 카드 
 
     // 참조 변수 
@@ -23,6 +24,8 @@ public class CardComponent
     private Transform _cardInventory; // 화면 하단의 카드 저장소 
     [SerializeField]
     private SummonPoint _summonImage; // 소환될 위치 강조이미지 
+    [SerializeField]
+    private DescriptionPanel _descriptionPanel;
 
     // 프로퍼티 
     public CardGivenComponent CardGivenComponent => _cardGivenComponent;
@@ -36,7 +39,7 @@ public class CardComponent
             _selectedCard = value;
         }
     }
-
+    public DescriptionPanel DescriptionPanel => _descriptionPanel; 
 
 
     public void Initialize(BattleManager battleManager)
@@ -76,10 +79,12 @@ public class CardComponent
             if (cardObj != null)
             {
                 cardObj.GetComponent<DraggableUI>().enabled = false; // 드래그 안되도록 설정 
-                CardData cardData = cardObj.GetComponent<CardObj>().CardData;
+                CardObj newCard = cardObj.GetComponent<CardObj>();
+                newCard.enabled = true; 
+
+                CardData cardData = newCard.CardData;
                 _deckDataSO.cardDataList.Add(cardData);
 
-                CardObj newCard = cardObj.GetComponent<CardObj>();
                 _cardList.Add(newCard);
             }
         }

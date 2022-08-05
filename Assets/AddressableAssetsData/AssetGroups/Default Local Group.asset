@@ -18,31 +18,55 @@ MonoBehaviour:
   m_GUID: 76909b7774e57ad4fa996a13c0059279
   m_SerializeEntries:
   - m_GUID: 4af0a1d92e4177741ab521c4a793edc5
-    m_Address: Flyingfish
+    m_Address: Flyingfish0
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: ee84a004e3816574db0e3021c8e3d143
-    m_Address: Blowfish
+    m_Address: Blowfish0
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: eb7f4f9128e76534996a695494c250a6
-    m_Address: Carp
+    m_Address: Carp0
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: ca5809b2caaad3946b9359361df82027
-    m_Address: Squid
+    m_Address: Squid0
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: c8df8f0e62629bb4c8186e7f55b7aea1
-    m_Address: Goldfish
+    m_Address: Goldfish0
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 9ffb4aee555f37d46b2261dfa73f18ba
-    m_Address: ElectricEll
+    m_Address: ElectricEll0
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 76d58e992e0868243b2af393a2ee0206
     m_Address: SpriteNone
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d2134c437def18148949b3c18008b1e3
+    m_Address: Carp
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1bf04dbffe1bc01488bc2e1632c9abf6
+    m_Address: Blowfish
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2c87298b30f13ad4b81ffa0e655f715c
+    m_Address: ElectricEll
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e72566e61b5a9404da686a755a03c732
+    m_Address: Flyingfish
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b96e735f5987e2147bd3df03c347a106
+    m_Address: Goldfish
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 44e4a5da514e54f4ba0e5e87d34cff0b
+    m_Address: Squid
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
