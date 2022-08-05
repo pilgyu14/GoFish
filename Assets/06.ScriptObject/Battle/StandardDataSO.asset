@@ -34,11 +34,11 @@ MonoBehaviour:
     name: "\uBD95\uC5B4"
     description: "\uBD95\uC5B4\uC785\uB2C8\uB2E4 "
     cost: 5
-    hp: 0
-    damage: 10
-    attackDelay: 0.5
-    moveSpeed: 20
-    attackRange: 5
+    hp: 10
+    damage: 3
+    attackDelay: 3
+    moveSpeed: 3
+    attackRange: 2
     traceDistance: 5
     traceAngle: 20
   - unitType: 0
@@ -46,13 +46,13 @@ MonoBehaviour:
     skinData:
       _skinType: 2
     name: "\uAE08\uBD95\uC5B4"
-    description: "\uAE08\uBD95\uC5B4\uC785\uB2C8"
-    cost: 5
-    hp: 0
-    damage: 10
-    attackDelay: 0.5
-    moveSpeed: 20
-    attackRange: 5
+    description: "\uCCB4\uB825\uC774 \uB192\uC544\uC694"
+    cost: 10
+    hp: 18
+    damage: 2
+    attackDelay: 2.5
+    moveSpeed: 2.5
+    attackRange: 1.5
     traceDistance: 5
     traceAngle: 20
   - unitType: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
     skinData:
       _skinType: 3
     name: "\uC624\uC9D5\uC5B4 "
-    description: "\uC624\uC9D5\uC5B4\uC785\uB2C8\uB2E4"
+    description: "\uC6D0\uAC70\uB9AC \uACF5\uACA9\uC744 \uD574\uC694"
     cost: 5
     hp: 0
     damage: 10
@@ -74,13 +74,13 @@ MonoBehaviour:
     skinData:
       _skinType: 4
     name: "\uBCF5\uC5B4"
-    description: "\uBCF5\uC5B4\uC785\uB2C8\uB2E4 "
-    cost: 5
-    hp: 0
-    damage: 10
-    attackDelay: 0.5
-    moveSpeed: 20
-    attackRange: 5
+    description: "\uC790\uD3ED\uD574\uC694"
+    cost: 12
+    hp: 10
+    damage: 15
+    attackDelay: 0
+    moveSpeed: 5
+    attackRange: 1
     traceDistance: 5
     traceAngle: 20
   - unitType: 0
@@ -88,13 +88,13 @@ MonoBehaviour:
     skinData:
       _skinType: 5
     name: "\uB0A0\uCE58"
-    description: "\uB0A0\uCE58\uC785\uB2C8\uB2E4 "
-    cost: 5
-    hp: 0
-    damage: 10
-    attackDelay: 0.5
-    moveSpeed: 20
-    attackRange: 5
+    description: "\uACF5\uC911\uC720\uB2DB\uC774\uC5D0\uC694"
+    cost: 10
+    hp: 8
+    damage: 2
+    attackDelay: 2
+    moveSpeed: 3
+    attackRange: 2
     traceDistance: 5
     traceAngle: 20
   - unitType: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
     skinData:
       _skinType: 6
     name: "\uC804\uAE30\uBC40\uC7A5\uC5B4"
-    description: "\uC804\uAE30\uBC40\uC7A5\uC5B4\uC785\uB2C8\uB2E4 "
+    description: "\uAE30\uC808\uC2DC\uCF1C\uC694"
     cost: 5
     hp: 0
     damage: 10

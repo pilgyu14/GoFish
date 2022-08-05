@@ -12,6 +12,7 @@ public class CardComponent
     private List<DroppableUI> _slotList = new List<DroppableUI>();
 
     private BattleManager _battleManager;
+    private CostComponent _costComponent; 
     [SerializeField]
     private CardObj _selectedCard; // 선택된 카드 
 
@@ -26,6 +27,8 @@ public class CardComponent
     private SummonPoint _summonImage; // 소환될 위치 강조이미지 
     [SerializeField]
     private DescriptionPanel _descriptionPanel;
+    [SerializeField]
+    private GameObject _selectedCanvas; 
 
     // 프로퍼티 
     public CardGivenComponent CardGivenComponent => _cardGivenComponent;
@@ -42,9 +45,10 @@ public class CardComponent
     public DescriptionPanel DescriptionPanel => _descriptionPanel; 
 
 
-    public void Initialize(BattleManager battleManager)
+    public void Initialize(BattleManager battleManager, CostComponent costComponent)
     {
         _battleManager = battleManager;
+        _costComponent = costComponent;
         SetSlots();
         _cardGivenComponent.Initialize();
         EventManager.Instance.StartListening(EventsType.SetDeckCard, SetDeckCard);
@@ -73,6 +77,8 @@ public class CardComponent
     /// </summary>
     private void SetDeckCard()
     {
+        _deckDataSO.ClearDeck();
+
         foreach (var slot in _slotList)
         {
             Transform cardObj = slot.transform.Find("CardObj");
@@ -88,7 +94,13 @@ public class CardComponent
                 _cardList.Add(newCard);
             }
         }
+        if (_deckDataSO.cardDataList.Count < 1)
+        {
+            _costComponent.WarrningComponent.SetWarrning("1장이상의 카드를 세팅해주세요");
+            return; 
+        }
         _battleManager.IsBattle = true;
+        _selectedCanvas.SetActive(false); 
     }
 
     /// <summary>
