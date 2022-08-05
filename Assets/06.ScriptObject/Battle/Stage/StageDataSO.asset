@@ -15,5 +15,6 @@ MonoBehaviour:
   stageDataList:
   - _stageType: 0
     _stageName: "\uBB3C\uACE0\uAE30VS\uC778\uAC04"
-    timeValue: 0
+    enemySpawnTime: 5
     playerCardList: 010000000200000003000000040000000500000006000000
+    enemyUnitList: 

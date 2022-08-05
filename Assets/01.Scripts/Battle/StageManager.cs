@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StageManager : MonoSingleton<StageManager>
 {
+    [SerializeField]
     private StageData _currentStageData;
     public StageData CurrentStageData
     {

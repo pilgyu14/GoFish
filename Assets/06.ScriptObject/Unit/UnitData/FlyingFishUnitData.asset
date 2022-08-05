@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40aa047b50a0d1143a101d96891eab77, type: 3}
   m_Name: FlyingFishUnitData
   m_EditorClassIdentifier: 
+  cardNamingType: 5
   isHuman: 0
   isFly: 1
   isSkyAtk: 1

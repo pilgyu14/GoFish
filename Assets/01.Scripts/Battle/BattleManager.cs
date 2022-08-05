@@ -31,6 +31,8 @@ public class BattleManager : MonoBehaviour
     {
         _cardComponent.Initialize(this);
         _summonComponent.Initialize(_cardComponent);
+
+        StartCoroutine(SpawnEnemy()); 
     }
     private void Update()
     {
@@ -41,6 +43,26 @@ public class BattleManager : MonoBehaviour
         _summonComponent.UpdateSomething();
     }
 
+    private IEnumerator SpawnEnemy()
+    {
+        while(_isBattle == false)
+        {
+            yield return null;
+        }
+        
+        float time = StageManager.Instance.CurrentStageData.enemySpawnTime;
+        WaitForSeconds waitForSeconds = new WaitForSeconds(time);
+
+        while(true)
+        {
+            if(_isBattle == false)
+            {
+                continue; 
+            }
+            _summonComponent.SummonEnemy();
+            yield return waitForSeconds; 
+        }
+    }
     /// <summary>
     /// (버튼 함수) 현재 스테이지 설정 
     /// </summary>

@@ -9,19 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40aa047b50a0d1143a101d96891eab77, type: 3}
-  m_Name: BlowFishUnitData
+  m_Script: {fileID: 11500000, guid: 38eec6aa60ef1e64ca9657fd1cddd6ca, type: 3}
+  m_Name: EnemyListSO
   m_EditorClassIdentifier: 
-  cardNamingType: 4
-  isHuman: 0
-  isFly: 0
-  isSkyAtk: 0
-  isGroundAtk: 1
-  moveSpeed: 5
-  hp: 10
-  cost: 12
-  atkDamage: 15
-  atkRange: 1
-  beforeDelay: 0
-  afterDelay: 0
-  sightRange: 5
+  unitList:
+  - {fileID: 522485246595542502, guid: fea08bc107628a04d9cac5af509e00bc, type: 3}

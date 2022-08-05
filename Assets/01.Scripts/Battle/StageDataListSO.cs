@@ -25,9 +25,12 @@ public class StageData
 {
     public BattleStageType _stageType;
     public string _stageName;
-    public float timeValue;
+    [Header("적 소환 주기")]
+    public float enemySpawnTime; 
     
     [Header("주어질 유닛들")]
-    public List<CardNamingType> playerCardList = new List<CardNamingType>(); // 주어질 카드들 
+    public List<CardNamingType> playerCardList = new List<CardNamingType>(); // 주어질 유닛들  
+    [Header("나올 적 유닛들")]
+    public List<CardNamingType> enemyUnitList = new List<CardNamingType>(); // 나올 적 유닛들  
 }
 

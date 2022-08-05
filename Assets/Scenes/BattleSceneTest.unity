@@ -2739,7 +2739,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &860829680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5395,6 +5395,8 @@ MonoBehaviour:
     _summonImage: {fileID: 281438258}
   _summonComponent:
     _unitListSO: {fileID: 11400000, guid: 8ed6aec0a55331b4e88cc3cc7669d142, type: 2}
+    _enemyListSO: {fileID: 11400000, guid: 96cc826d3ef84c74b8146ad16e3f26aa, type: 2}
+    _enemySpawnPoint: {fileID: 1074629451}
   _stageDataListSO: {fileID: 11400000, guid: dae36c090c32514478e01beaa8f5ac50, type: 2}
   _isBattle: 0
 --- !u!212 &1702139636
