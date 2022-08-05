@@ -29,7 +29,7 @@ public class BattleManager : MonoBehaviour
     public SummonComponent SummonComponent => _summonComponent; 
     private void Start()
     {
-        _cardComponent.Initialize(this);
+        _cardComponent.Initialize(this,_costComponent);
         _summonComponent.Initialize(_cardComponent,_costComponent);
         _costComponent.Initialize(this); 
 
