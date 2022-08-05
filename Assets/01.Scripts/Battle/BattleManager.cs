@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BattleManager : MonoBehaviour
 {
@@ -67,7 +68,9 @@ public class BattleManager : MonoBehaviour
     }
     private IEnumerator SpawnEnemy()
     {
-        while(_isBattle == false)
+        Scene scene = SceneManager.GetActiveScene();
+
+        while (_isBattle == false)
         {
             yield return null;
         }
@@ -77,6 +80,11 @@ public class BattleManager : MonoBehaviour
 
         while(true)
         {
+            if(scene.name == "Tutorial1")
+            {
+                break;
+            }
+
             if(_isBattle == false)
             {
                 continue; 
@@ -104,5 +112,10 @@ public class BattleManager : MonoBehaviour
     public void SetDeckTest()
     {
         _cardComponent.CardGivenComponent.SetDeckData(); 
+    }
+
+    public void EnemyFunction()
+    {
+        _summonComponent.SummonEnemy();
     }
 }

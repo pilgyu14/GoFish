@@ -41,7 +41,7 @@ public class LoadSceneManager : MonoBehaviour
     public void LoadTutorialScene()
     {
         SceneLoadBase();
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("Tutorial1");
     }
     #endregion
 

@@ -42,8 +42,10 @@ public class CardComponent
             _selectedCard = value;
         }
     }
-    public DescriptionPanel DescriptionPanel => _descriptionPanel; 
+    public DescriptionPanel DescriptionPanel => _descriptionPanel;
 
+    public GameObject Tutorial;
+    public GameObject firstText;
 
     public void Initialize(BattleManager battleManager, CostComponent costComponent)
     {
@@ -100,7 +102,9 @@ public class CardComponent
             return; 
         }
         _battleManager.IsBattle = true;
-        _selectedCanvas.SetActive(false); 
+        _selectedCanvas.SetActive(false);
+        Tutorial.SetActive(true);
+        firstText.SetActive(false);
     }
 
     /// <summary>

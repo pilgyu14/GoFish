@@ -924,7 +924,6 @@ MonoBehaviour:
   itemPrice: 050000000a000000080000000c0000000a0000000c00000001000000
   MoneyText: {fileID: 1699008105}
   Notext: {fileID: 1916460651}
-  Money: 0
 --- !u!4 &77681749
 Transform:
   m_ObjectHideFlags: 0
@@ -12486,6 +12485,7 @@ GameObject:
   - component: {fileID: 1805294935}
   - component: {fileID: 1805294934}
   - component: {fileID: 1805294933}
+  - component: {fileID: 1805294936}
   m_Layer: 5
   m_Name: TutorialButton
   m_TagString: Untagged
@@ -12619,6 +12619,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1805294931}
   m_CullTransparentMesh: 1
+--- !u!114 &1805294936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805294931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30a5b19da6a889b4c83c3f379875c7ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventsTypes: 01000000
+  intParams: 00000000
 --- !u!1 &1823467713
 GameObject:
   m_ObjectHideFlags: 0

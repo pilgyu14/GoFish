@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using TMPro;
 
 public class TutorialManager : MonoBehaviour
@@ -16,6 +17,8 @@ public class TutorialManager : MonoBehaviour
 
     private bool isSpawn; //스폰 튜토리얼 클리어
     private bool isKill; //적 잡기 튜토리얼 클리어
+
+    public UnityEvent SpawnEvent;
 
     void Update()
     {
@@ -43,13 +46,17 @@ public class TutorialManager : MonoBehaviour
             NextTutorialButtonText.text = "유닛을 소환해보기";
         }
 
-        if (currentTutorial == 6 && isKill == false)
+        if(currentTutorial == 6)
         {
-            NextTutorialButton.interactable = false;
-            NextTutorialButtonText.text = "적을 잡아보기";
+            SpawnEvent?.Invoke();
         }
+        //if (currentTutorial == 6 && isKill == false)
+        //{
+        //    NextTutorialButton.interactable = false;
+        //    NextTutorialButtonText.text = "적을 잡아보기";
+        //}
     }
-        
+            
     private void CheckIsLast()
     {
         if (currentTutorial == tutorialContents.Length)

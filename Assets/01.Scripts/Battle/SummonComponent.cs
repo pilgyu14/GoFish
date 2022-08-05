@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using Random = UnityEngine.Random; 
+using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 [Serializable]
 public class SummonComponent 
@@ -23,6 +25,8 @@ public class SummonComponent
     [SerializeField]
     private Transform _enemySpawnPoint;
 
+    public UnityEvent summonEvent;
+
     public bool IsSummonable
     {
         get => _isSummonable;
@@ -38,13 +42,18 @@ public class SummonComponent
     }
     public void UpdateSomething()
     {
-        if(Input.GetMouseButtonDown(0) && _cardComponent.SelectedCard != null && _isSummonable == true) // 선택된 카드가 있고 좌클릭시 
+        Scene scene = SceneManager.GetActiveScene();
+        if (Input.GetMouseButtonDown(0) && _cardComponent.SelectedCard != null && _isSummonable == true) // 선택된 카드가 있고 좌클릭시 
         {
             if(_costComponent.Money < _cardComponent.SelectedCard.CardData.cost) // 돈 부족시 
             {
                 // 돈이 부족합니다 패널 
                 _costComponent.WarrningComponent.SetWarrning("돈이 부족합니다");
                 return; 
+            }
+            if(scene.name == "Tutorial1")
+            {
+                summonEvent?.Invoke();
             }
             SummonUnit();
             _costComponent.MinusMoney(_cardComponent.SelectedCard.CardData.cost);
