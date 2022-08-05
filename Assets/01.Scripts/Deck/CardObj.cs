@@ -36,9 +36,10 @@ public class CardObj : PoolableObject, IPointerClickHandler
     {
 
         _cardData = cardData; 
-        _battleManager ??= FindObjectOfType<BattleManager>(); 
+        _battleManager ??= FindObjectOfType<BattleManager>();
 
-        _cardImage.sprite = SkinData.GetSkin(cardData.skinData._skinType);
+        _cardImage.sprite = cardData.sprite;
+        //_cardImage.sprite = SkinData.GetSkin(cardData.skinData._skinType);
         _costText.text = cardData.cost.ToString();
         _nameText.text = cardData.name; 
     }
