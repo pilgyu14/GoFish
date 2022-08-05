@@ -9,6 +9,7 @@ public class TitleOptionManager : MonoBehaviour
 {
     public GameObject title;
     public GameObject option;
+    public GameObject selectStage;
 
     public void LoadStageScene()
     {
@@ -20,20 +21,28 @@ public class TitleOptionManager : MonoBehaviour
 
     }
 
-    public void OptionButton()
+    public void SelectStageButton()
     {
-        //title.transform.DOLocalMoveX(-2000, 0.5f);
-        //option.transform.DOLocalMoveX(0, 0.5f);
-        title.transform.DOLocalMoveX(-2100, 0.4f).OnComplete(() => { title.transform.DOLocalMoveX(-2000, 0.15f); });
-        option.transform.DOLocalMoveX(-100, 0.4f).OnComplete(() => { option.transform.DOLocalMoveX(0, 0.15f); });
+        title.transform.DOLocalMoveY(-1500, 0.5f);
+        selectStage.transform.DOLocalMoveY(0, 0.5f);
     }
 
-    public void TitleButton()
+    public void SelectStageTitleButton()
     {
-        //title.transform.DOLocalMoveX(0, 0.5f);
-        //option.transform.DOLocalMoveX(2000, 0.5f);
-        title.transform.DOLocalMoveX(100, 0.4f).OnComplete(() => { title.transform.DOLocalMoveX(0, 0.15f); });
-        option.transform.DOLocalMoveX(2100, 0.4f).OnComplete(() => { option.transform.DOLocalMoveX(2000, 0.15f); });
+        title.transform.DOLocalMoveY(0, 0.5f);
+        selectStage.transform.DOLocalMoveY(1500, 0.5f);
+    }
+
+    public void OptionButton()
+    {
+        title.transform.DOLocalMoveX(-2000, 0.5f);
+        option.transform.DOLocalMoveX(0, 0.5f);
+    }
+
+    public void OptionTitleButton()
+    {
+        title.transform.DOLocalMoveX(0, 0.5f);
+        option.transform.DOLocalMoveX(2000, 0.5f);
     }
 
     public void FullScreen()
