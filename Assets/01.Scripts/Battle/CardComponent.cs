@@ -22,12 +22,12 @@ public class CardComponent
     [SerializeField]
     private Transform _cardInventory; // 화면 하단의 카드 저장소 
     [SerializeField]
-    private GameObject _summonImage; // 소환될 위치 강조이미지 
+    private SummonPoint _summonImage; // 소환될 위치 강조이미지 
 
     // 프로퍼티 
     public CardGivenComponent CardGivenComponent => _cardGivenComponent;
     public List<CardObj> CardList => _cardList;
-    public GameObject SummonPoint => _summonImage;
+    public SummonPoint SummonPoint => _summonImage;
     public CardObj SelectedCard
     {
         get => _selectedCard;
@@ -36,6 +36,8 @@ public class CardComponent
             _selectedCard = value;
         }
     }
+
+
 
     public void Initialize(BattleManager battleManager)
     {
@@ -90,7 +92,7 @@ public class CardComponent
     /// <param name="cardObj"></param>
     public void SelectCard(CardObj cardObj)
     {
-        _summonImage.SetActive(true);
+        _summonImage.gameObject.SetActive(true);
         _selectedCard = cardObj;
     }
     /// <summary>

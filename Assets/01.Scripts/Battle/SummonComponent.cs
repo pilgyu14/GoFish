@@ -13,20 +13,30 @@ public class SummonComponent
     private CardObj _selectedCard; // 선택된(소환할) 카드
     private CardComponent _cardComponent;
     private BattleManager _battleManager;
+    [SerializeField]
+    private bool _isSummonable; // 소환가능한가 
 
     [Header("적 소환 관련 변수")]
     [SerializeField]
     private UnitListSO _enemyListSO;
     [SerializeField]
-    private Transform _enemySpawnPoint; 
+    private Transform _enemySpawnPoint;
 
+    public bool IsSummonable
+    {
+        get => _isSummonable;
+        set
+        {
+            _isSummonable = value;
+        }
+    }
     public void Initialize( CardComponent cardComponent)
     {
         _cardComponent = cardComponent; 
     }
     public void UpdateSomething()
     {
-        if(Input.GetMouseButtonDown(0) && _cardComponent.SelectedCard != null) // 선택된 카드가 있고 좌클릭시 
+        if(Input.GetMouseButtonDown(0) && _cardComponent.SelectedCard != null && _isSummonable == true) // 선택된 카드가 있고 좌클릭시 
         {
             SummonUnit(); 
         }

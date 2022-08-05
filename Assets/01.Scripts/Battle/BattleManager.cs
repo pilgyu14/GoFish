@@ -25,8 +25,8 @@ public class BattleManager : MonoBehaviour
             _isBattle = value; 
         }
     }
-    public CardComponent CardComponent => _cardComponent; 
-
+    public CardComponent CardComponent => _cardComponent;
+    public SummonComponent SummonComponent => _summonComponent; 
     private void Start()
     {
         _cardComponent.Initialize(this);

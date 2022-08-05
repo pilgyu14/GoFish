@@ -187,53 +187,5 @@ public class CameraController : MonoBehaviour
         }
         isMove = false; 
     }
-    #region 음
-    /*
-    private void ChangeViewType()
-    {
-        if (_curViewType == ViewType.Topdown)
-        {
-            _curViewType = ViewType.Moving;
-            return;
-        }
-        _curViewType = ViewType.Topdown;
-
-        _mainCam.transform.position = _originPos;
-        _mainCam.transform.eulerAngles = _originRot;
-    }
-
-    
-    private float _rotY, _rotX = 90;
-    private void MoveCam()
-    {
-
-        float x = Input.GetAxis("Mouse Y");
-        float y = Input.GetAxis("Mouse X");
-
-        _rotX += x;
-        _rotX = Mathf.Clamp(_rotX, -90, 90);
-        _rotY += y;
-        _mainCam.transform.eulerAngles = new Vector3(-_rotX, _rotY,0);
-
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
-
-        _mainCam.transform.position += new Vector3(h, 0, v); 
-    }
-    private void FixedCamera()
-    {
-        if (Input.GetMouseButton(2))
-        {
-            x += Input.GetAxis("Mouse X") * _moveSpeed * Time.unscaledDeltaTime; // 마우스의 좌우 이동량을 xmove 에 누적
-            y += Input.GetAxis("Mouse Y") * _moveSpeed * Time.unscaledDeltaTime; // 마우스의 상하 이동량을 ymove 에 누적
-
-            Vector3 reverseDistance = new Vector3(x, 20, y);
-            transform.position = reverseDistance;
-            //Vector3.SmoothDamp(transform.position, player.transform.position - transform.rotation * reverseDistance, ref velocity, SmoothTime);
-        }
-    }
-
-    */
-
-    #endregion
+  
 }

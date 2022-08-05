@@ -6010,14 +6010,14 @@ MonoBehaviour:
   wheelspeed: 30
   _moveSpeed: 250
   _minZoom: 50
-  _maxZoom: 100
+  _maxZoom: 150
   timeScale: 0
   _parentTrans: {fileID: 0}
   _camRotValue: 90
   xDragDir: -1
   yDragDir: -1
-  _minCamPos: {x: -16, y: -32}
-  _maxCamPos: {x: 16, y: 32}
+  _minCamPos: {x: -64, y: -100}
+  _maxCamPos: {x: 64, y: 100}
   ease: 0
   time: 0.3
   _testSpeed: 20
