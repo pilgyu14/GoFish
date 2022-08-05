@@ -48,7 +48,7 @@ public class MoneySystem : MonoBehaviour
     IEnumerator addMoney()
     {
         yield return new WaitForSeconds(1f);
-        Money += 3;
+        Money += 1;
         StartCoroutine("addMoney");
     }
 
