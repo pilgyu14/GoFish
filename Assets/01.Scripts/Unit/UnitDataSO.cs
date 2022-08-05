@@ -20,10 +20,10 @@ public class UnitDataSO : ScriptableObject
     public readonly float cost;
 
     [Header("공격관련")]
-    public readonly float atkDamage;
-    public readonly float atkRange;
-    public readonly float beforeDelay;
-    public readonly float afterDelay;
+    public float atkDamage;
+    public float atkRange;
+    public float beforeDelay;
+    public float afterDelay;
     public float atkSpeed => 1 / (beforeDelay + afterDelay);
-    public readonly float sightRange;
+    public float sightRange;
 }
