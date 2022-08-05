@@ -9,7 +9,7 @@ public abstract class UnitState : MonoBehaviour
     public UnitScript unit => ai.Unit;
     [SerializeField] List<UnitTransition> transitions;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         ai = GetComponentInParent<UnitAI>(); 
     }
