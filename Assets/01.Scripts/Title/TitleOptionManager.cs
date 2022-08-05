@@ -11,14 +11,34 @@ public class TitleOptionManager : MonoBehaviour
     public GameObject option;
     public GameObject selectStage;
 
-    public void LoadStageScene()
+    public void LoadStage1Scene()
     {
+        //SceneManager.LoadScene("");
+    }
 
+    public void LoadStage2Scene()
+    {
+        //SceneManager.LoadScene("");
+    }
+
+    public void LoadStage3Scene()
+    {
+        //SceneManager.LoadScene("");
+    }
+
+    public void LoadStage4Scene()
+    {
+        //SceneManager.LoadScene("");
+    }
+
+    public void LoadStage5Scene()
+    {
+        //SceneManager.LoadScene("");
     }
 
     public void LoadTutorialScene()
     {
-
+        SceneManager.LoadScene("Tutorial");
     }
 
     public void SelectStageButton()
