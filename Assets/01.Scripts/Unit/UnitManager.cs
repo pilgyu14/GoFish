@@ -34,7 +34,7 @@ public class UnitManager : MonoBehaviour
         humanList = new List<UnitScript>();
     }
 
-    public void SummonUnit(UnitScript unit, Vector3 pos)
+    public void SummonUnit(UnitScript unit, Vector3 pos, Vector3 rot)
     {
         UnitScript newUnit = PoolManager.Instance.Pop(unit) as UnitScript;
         if (newUnit.UnitData.isHuman)
@@ -42,6 +42,7 @@ public class UnitManager : MonoBehaviour
         else
             fishList.Add(newUnit);
         newUnit.transform.position = pos;
+        //newUnit.transform.eulerAngles = rot; 
     }
 
     public void DeleteInList(UnitScript unit)

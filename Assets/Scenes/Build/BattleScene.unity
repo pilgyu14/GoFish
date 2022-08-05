@@ -1038,15 +1038,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8638438837299811005, guid: 71c7dc037182f5844a53ccf6fb70e937, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8638438837299811005, guid: 71c7dc037182f5844a53ccf6fb70e937, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8638438837299811005, guid: 71c7dc037182f5844a53ccf6fb70e937, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8638438837476021294, guid: 71c7dc037182f5844a53ccf6fb70e937, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638438837476021294, guid: 71c7dc037182f5844a53ccf6fb70e937, type: 3}
+      propertyPath: m_TagString
+      value: Water
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71c7dc037182f5844a53ccf6fb70e937, type: 3}

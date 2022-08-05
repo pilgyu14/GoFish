@@ -11,6 +11,7 @@ public class SummonComponent
     private UnitListSO _unitListSO;
     
     private CardObj _selectedCard; // 선택된(소환할) 카드
+    private BattleManager _battleManger; 
     private CardComponent _cardComponent;
     private CostComponent _costComponent;
     [SerializeField]
@@ -58,8 +59,7 @@ public class SummonComponent
         int count = _enemyListSO.unitList.Count; // 적 유닛 종류 
         int randomUnitIdx = Random.Range(0, count);
         UnitScript newUnit = _enemyListSO.unitList[randomUnitIdx];
-        UnitScript newUnit2 = PoolManager.Instance.Pop(newUnit) as UnitScript; // 유닛 생성 
-        newUnit2.transform.position = _enemySpawnPoint.position;
+        UnitManager.Instance.SummonUnit(newUnit, _enemySpawnPoint.position, Vector3.zero);
         //SetPosAndRot(newUnit2.transform, _enemySpawnPoint.position);  // 위치 회전 설정
     }
     /// <summary>
@@ -69,9 +69,10 @@ public class SummonComponent
     {
         CardNamingType selectedCardType = _cardComponent.SelectedCard.CardData.cardNamingType;
         UnitScript newUnit = _unitListSO.unitList.Find((x) => x.UnitData.cardNamingType == selectedCardType); // 선택한 유닛 찾기  
-        newUnit = PoolManager.Instance.Pop(newUnit) as UnitScript; // 유닛 생성 
-        SetPosAndRot(newUnit.transform, _cardComponent.SummonPoint.transform.position);
-        newUnit.transform.position += Vector3.up * 5; 
+        Vector3 summonPos = _cardComponent.SummonPoint.transform.position;
+        summonPos += Vector3.up * 3; 
+        UnitManager.Instance.SummonUnit(newUnit, summonPos, Vector3.zero); // 유닛 생성
+
     }
 
     /// <summary>

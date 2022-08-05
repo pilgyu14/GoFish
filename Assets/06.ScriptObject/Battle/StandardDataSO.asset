@@ -20,6 +20,7 @@ MonoBehaviour:
     name: NULL
     description: X
     cost: 5
+    hp: 0
     damage: 10
     attackDelay: 0.5
     moveSpeed: 20
@@ -33,6 +34,7 @@ MonoBehaviour:
     name: "\uBD95\uC5B4"
     description: "\uBD95\uC5B4\uC785\uB2C8\uB2E4 "
     cost: 5
+    hp: 0
     damage: 10
     attackDelay: 0.5
     moveSpeed: 20
@@ -46,6 +48,7 @@ MonoBehaviour:
     name: "\uAE08\uBD95\uC5B4"
     description: "\uAE08\uBD95\uC5B4\uC785\uB2C8"
     cost: 5
+    hp: 0
     damage: 10
     attackDelay: 0.5
     moveSpeed: 20
@@ -56,9 +59,10 @@ MonoBehaviour:
     cardNamingType: 3
     skinData:
       _skinType: 3
-    name: "\uBD95\uC5B4"
-    description: "\uBD95\uC5B4\uC785\uB2C8\uB2E4"
+    name: "\uC624\uC9D5\uC5B4 "
+    description: "\uC624\uC9D5\uC5B4\uC785\uB2C8\uB2E4"
     cost: 5
+    hp: 0
     damage: 10
     attackDelay: 0.5
     moveSpeed: 20
@@ -72,6 +76,7 @@ MonoBehaviour:
     name: "\uBCF5\uC5B4"
     description: "\uBCF5\uC5B4\uC785\uB2C8\uB2E4 "
     cost: 5
+    hp: 0
     damage: 10
     attackDelay: 0.5
     moveSpeed: 20
@@ -85,6 +90,7 @@ MonoBehaviour:
     name: "\uB0A0\uCE58"
     description: "\uB0A0\uCE58\uC785\uB2C8\uB2E4 "
     cost: 5
+    hp: 0
     damage: 10
     attackDelay: 0.5
     moveSpeed: 20
@@ -98,6 +104,7 @@ MonoBehaviour:
     name: "\uC804\uAE30\uBC40\uC7A5\uC5B4"
     description: "\uC804\uAE30\uBC40\uC7A5\uC5B4\uC785\uB2C8\uB2E4 "
     cost: 5
+    hp: 0
     damage: 10
     attackDelay: 0.5
     moveSpeed: 20
