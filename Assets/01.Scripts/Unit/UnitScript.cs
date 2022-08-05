@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class UnitScript : PoolableObject
 {
-    [SerializeField] protected UnitDataSO unitData;
+    [SerializeField] private UnitDataSO unitData;
     public UnitDataSO UnitData => unitData;
 
-    [SerializeField] protected UnitAI unitAI;
+    [SerializeField] private UnitAI unitAI;
     public UnitAI AI => unitAI;
 
-    [SerializeField] protected UnitAnimation unitAnimation;
+    [SerializeField] private UnitAnimation unitAnimation;
     public UnitAnimation Animation => unitAnimation;
 
     [SerializeField] protected UnitAttack unitAttack;
@@ -23,9 +23,10 @@ public class UnitScript : PoolableObject
     protected float currentSpeed = 0;
     private UnitScript target;
     public UnitScript Target => target;
+    public Vector3 destination;
     #endregion
 
-    protected virtual void Update()
+    private void Update()
     {
         FindTarget();
     }
@@ -35,6 +36,7 @@ public class UnitScript : PoolableObject
         Vector3 dir = (pos - transform.position).normalized;
         dir.y = 0;
         transform.position += dir * currentSpeed * Time.deltaTime;
+        transform.forward = dir;
         unitAnimation.WalkAnimation(currentSpeed, unitData.moveSpeed);
     }
 
@@ -95,7 +97,7 @@ public class UnitScript : PoolableObject
     }
 
 
-    public virtual void GetHit(float damage)
+    public void GetHit(float damage)
     {
         currentHP -= damage;
         if(currentHP <= 0)
@@ -104,7 +106,7 @@ public class UnitScript : PoolableObject
         }
     }
 
-    public virtual void GetSlowness(float percent, float time)
+    public void GetSlowness(float percent, float time)
     {
         StartCoroutine(SlownessCoroutine(percent, time));
     }
@@ -117,7 +119,7 @@ public class UnitScript : PoolableObject
         currentSpeed += slowness;
     }
 
-    public virtual void Die()
+    public void Die()
     {
         unitAnimation.DeathAnimation();
         StartCoroutine(DeathCoroutine());
@@ -132,6 +134,7 @@ public class UnitScript : PoolableObject
     public override void Reset()
     {
         StopAllCoroutines();
+        unitAI.Reset();
         currentHP = unitData.hp;
         currentSpeed = unitData.moveSpeed;
     }
