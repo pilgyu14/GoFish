@@ -6,6 +6,7 @@ public class UnitMeleeAttack : UnitAttack
 {
     public override void Attack(UnitScript target)
     {
+        if (!isCanAttack) return;
         Animation.AttackAnimation();
         StartCoroutine(AttackCoroutine(target));
     }
@@ -14,7 +15,10 @@ public class UnitMeleeAttack : UnitAttack
     {
         isCanAttack = false;
         yield return new WaitForSeconds(Data.beforeDelay);
-        target.GetHit(Data.atkDamage);
+        if (target != null)
+            target.GetHit(Data.atkDamage);
+        else
+            GameManager.instance.FishHomeHP(Data.atkDamage);
         yield return new WaitForSeconds(Data.beforeDelay);
         isCanAttack = true;
     }

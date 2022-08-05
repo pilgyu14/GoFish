@@ -10,7 +10,7 @@ public abstract class UnitDecision : MonoBehaviour
     public UnitAI ai => state.AI;
     public UnitScript unit => ai.Unit;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         state = GetComponentInParent<UnitState>();
     }

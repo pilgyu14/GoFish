@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IdleState : UnitState
+public class FishIdleState : UnitState
 {
     public override void ActionStart()
     {
