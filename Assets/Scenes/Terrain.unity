@@ -5884,6 +5884,7 @@ GameObject:
   - component: {fileID: 1305055338}
   - component: {fileID: 1305055337}
   - component: {fileID: 1305055336}
+  - component: {fileID: 1305055339}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -5950,12 +5951,45 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1305055335}
   m_LocalRotation: {x: 0.7064834, y: 0.029684544, z: -0.029684544, w: 0.7064834}
-  m_LocalPosition: {x: -3.1778827, y: 150, z: -4.373863}
+  m_LocalPosition: {x: 0, y: 100, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: 4.812, z: 0}
+--- !u!114 &1305055339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305055335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e514570d9b0ebb4e9cd466bc72a536f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  xmove: 5
+  ymove: 80
+  zoomValue: 0
+  distance: 100
+  SmoothTime: 0.2
+  _curViewType: 0
+  wheelspeed: 30
+  _moveSpeed: 250
+  _minZoom: 50
+  _maxZoom: 100
+  timeScale: 0
+  _parentTrans: {fileID: 0}
+  _camRotValue: 90
+  xDragDir: -1
+  yDragDir: -1
+  _minCamPos: {x: -16, y: -32}
+  _maxCamPos: {x: 16, y: 32}
+  ease: 0
+  time: 0.3
+  _testSpeed: 20
 --- !u!1 &1331721172
 GameObject:
   m_ObjectHideFlags: 0
@@ -7697,7 +7731,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
