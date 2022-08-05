@@ -8233,6 +8233,7 @@ GameObject:
   - component: {fileID: 1243024065}
   - component: {fileID: 1243024064}
   - component: {fileID: 1243024066}
+  - component: {fileID: 1243024067}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -8281,6 +8282,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 916674d96775ba24785abc85297a3537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1243024067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243024063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 798a693e6892b5942b05266888f40427, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageButtons:
+  - {fileID: 53490616}
+  - {fileID: 121729994}
+  - {fileID: 1956258292}
+  - {fileID: 80487848}
+  - {fileID: 238642655}
+  isClear: 0100000000
 --- !u!1 &1272576724
 GameObject:
   m_ObjectHideFlags: 0
