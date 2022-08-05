@@ -16,12 +16,16 @@ public class WaterDecision : UnitDecision
     public override bool MakeADecision() //물가에 도착했을때 true
     {
         RaycastHit hit;
-        if(Physics.Raycast(unit.transform.position + ai.dir, Vector3.down, out hit, 10f, 1 << waterLayer | 1 << groundLayer))
+        if (Physics.Raycast(unit.transform.position + ai.dir * 2f + Vector3.up, Vector3.down, out hit, 10f, 1 << waterLayer | 1 << groundLayer))
         {
             if (hit.transform.CompareTag("Water"))
+            {
                 return true;
+            }
             else
+            {
                 return false;
+            }
         }
         return false;
     }

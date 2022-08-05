@@ -4,10 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
-    public static GameManager instance;
-
     [SerializeField]
     private GameObject panel;
     [SerializeField]
@@ -19,6 +17,12 @@ public class GameManager : MonoBehaviour
 
     public float humanHomeHP { get; set; }
     public float fishHomeHP { get; set; }
+
+    protected override void Awake()
+    {
+        base.Awake();
+        DontDestroyOnLoad(this);
+    }
 
     public void HumanHomeHP(float decrease)
     {
