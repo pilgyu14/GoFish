@@ -1,37 +1,58 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class CardComponent : MonoBehaviour
+[Serializable]
+public class CardComponent
 {
-
+    // 비공개 변수 
     private List<CardObj> _cardList = new List<CardObj>();
+    [SerializeField] // 임시 직렬화 
     private List<DroppableUI> _slotList = new List<DroppableUI>();
-    public List<CardObj> CardList => _cardList;
 
+    private BattleManager _battleManager;
+    private CardObj _selectedCard; // 선택된 카드 
 
+    // 참조 변수 
     [SerializeField]
-    private CardObj _cardObj;
+    private CardGivenComponent _cardGivenComponent;
     [SerializeField]
-    private CardDataSO _deckDataSO; // 현재 덱 (처음엔 비어있음) 
-
-    [SerializeField]
-    private StageDataListSO _stageDataListSO;
-
+    private CardDataSO _deckDataSO; // 현재    덱 (처음엔 비어있음) 
     [SerializeField]
     private Transform _cardInventory; // 화면 하단의 카드 저장소 
     [SerializeField]
     private GameObject _summonImage; // 소환될 위치 강조이미지 
 
-
-    private void Start()
+    // 프로퍼티 
+    public CardGivenComponent CardGivenComponent => _cardGivenComponent;
+    public List<CardObj> CardList => _cardList;
+    public GameObject SummonPoint => _summonImage;
+    public CardObj SelectedCard
     {
-        SetSlots(); 
+        get => _selectedCard;
+        set
+        {
+            _selectedCard = value;
+        }
     }
+
+    public void Initialize(BattleManager battleManager)
+    {
+        _battleManager = battleManager;
+        SetSlots();
+        _cardGivenComponent.Initialize();
+        EventManager.Instance.StartListening(EventsType.SetDeckCard, SetDeckCard);
+    }
+
+
+    /// <summary>
+    /// 슬롯 리스트에 추가 
+    /// </summary>
     private void SetSlots()
     {
-        int count = _cardInventory.childCount; 
-        for (int i = 0;i < count;i++)
+        int count = _cardInventory.childCount;
+        for (int i = 0; i < count; i++)
         {
             DroppableUI droppableUI = _cardInventory.GetChild(i).GetComponent<DroppableUI>();
             _slotList.Add(droppableUI);
@@ -39,7 +60,7 @@ public class CardComponent : MonoBehaviour
     }
     public void SetCard()
     {
-        _deckDataSO.ClearDeck(); 
+        _deckDataSO.ClearDeck();
     }
 
     /// <summary>
@@ -47,42 +68,44 @@ public class CardComponent : MonoBehaviour
     /// </summary>
     private void SetDeckCard()
     {
-        foreach(var slot in _slotList)
+        foreach (var slot in _slotList)
         {
-            Transform cardObj = slot.transform.Find("CardObj"); 
-            if(cardObj != null)
+            Transform cardObj = slot.transform.Find("CardObj");
+            if (cardObj != null)
             {
+                cardObj.GetComponent<DraggableUI>().enabled = false; // 드래그 안되도록 설정 
                 CardData cardData = cardObj.GetComponent<CardObj>().CardData;
+                _deckDataSO.cardDataList.Add(cardData);
+
+                CardObj newCard = cardObj.GetComponent<CardObj>();
+                _cardList.Add(newCard);
             }
         }
-    }
-    
-    /// <summary>
-    /// (버튼 함수) 현재 스테이지 설정 
-    /// </summary>
-    /// <param name="battleStageType"></param>
-    private void OnCheckStage(BattleStageType battleStageType)
-    {
-        StageManager.Instance.CurrentStageData = _stageDataListSO._stageDataList.Find((x) => x._stageType == battleStageType);
+        _battleManager.IsBattle = true;
     }
 
-    public void SelectCard()
+    /// <summary>
+    /// 카드 선택 
+    /// </summary>
+    /// <param name="cardObj"></param>
+    public void SelectCard(CardObj cardObj)
     {
-        _summonImage.SetActive(true); 
+        _summonImage.SetActive(true);
+        _selectedCard = cardObj;
     }
     /// <summary>
     /// 덱에 카드 추가 
     /// </summary>
     public void AddCard(CardObj cardObj)
     {
-        _cardList.Add(cardObj); 
+        _cardList.Add(cardObj);
     }
     /// <summary>
     /// 덱에 추가된 카드 해제 
     /// </summary>
     public void CancelCard(CardObj cardObj)
     {
-        _cardList.Remove(cardObj); 
+        _cardList.Remove(cardObj);
     }
     // 카드덱 카드 장착 
     // 카드덱 카드 해제 

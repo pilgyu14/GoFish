@@ -14,11 +14,89 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardDataList:
   - unitType: 0
-    cardNamingType: 1
+    cardNamingType: 0
     skinData:
       _skinType: 0
+    name: NULL
+    description: X
+    cost: 5
+    damage: 10
+    attackDelay: 0.5
+    moveSpeed: 20
+    attackRange: 5
+    traceDistance: 5
+    traceAngle: 20
+  - unitType: 0
+    cardNamingType: 1
+    skinData:
+      _skinType: 1
     name: "\uBD95\uC5B4"
     description: "\uBD95\uC5B4\uC785\uB2C8\uB2E4 "
+    cost: 5
+    damage: 10
+    attackDelay: 0.5
+    moveSpeed: 20
+    attackRange: 5
+    traceDistance: 5
+    traceAngle: 20
+  - unitType: 0
+    cardNamingType: 2
+    skinData:
+      _skinType: 2
+    name: "\uAE08\uBD95\uC5B4"
+    description: "\uAE08\uBD95\uC5B4\uC785\uB2C8"
+    cost: 5
+    damage: 10
+    attackDelay: 0.5
+    moveSpeed: 20
+    attackRange: 5
+    traceDistance: 5
+    traceAngle: 20
+  - unitType: 0
+    cardNamingType: 3
+    skinData:
+      _skinType: 3
+    name: "\uBD95\uC5B4"
+    description: "\uBD95\uC5B4\uC785\uB2C8\uB2E4"
+    cost: 5
+    damage: 10
+    attackDelay: 0.5
+    moveSpeed: 20
+    attackRange: 5
+    traceDistance: 5
+    traceAngle: 20
+  - unitType: 0
+    cardNamingType: 4
+    skinData:
+      _skinType: 4
+    name: "\uBCF5\uC5B4"
+    description: "\uBCF5\uC5B4\uC785\uB2C8\uB2E4 "
+    cost: 5
+    damage: 10
+    attackDelay: 0.5
+    moveSpeed: 20
+    attackRange: 5
+    traceDistance: 5
+    traceAngle: 20
+  - unitType: 0
+    cardNamingType: 5
+    skinData:
+      _skinType: 5
+    name: "\uB0A0\uCE58"
+    description: "\uB0A0\uCE58\uC785\uB2C8\uB2E4 "
+    cost: 5
+    damage: 10
+    attackDelay: 0.5
+    moveSpeed: 20
+    attackRange: 5
+    traceDistance: 5
+    traceAngle: 20
+  - unitType: 0
+    cardNamingType: 6
+    skinData:
+      _skinType: 6
+    name: "\uC804\uAE30\uBC40\uC7A5\uC5B4"
+    description: "\uC804\uAE30\uBC40\uC7A5\uC5B4\uC785\uB2C8\uB2E4 "
     cost: 5
     damage: 10
     attackDelay: 0.5

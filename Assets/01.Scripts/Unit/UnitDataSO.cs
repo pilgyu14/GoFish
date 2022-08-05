@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "SO/Unit/Data")]
 public class UnitDataSO : ScriptableObject
 {
+    [Header("유닛타입")]
+    public CardNamingType cardNamingType; 
+
     [Header ("특성")]
     public bool isHuman;
     public bool isFly;

@@ -41,6 +41,10 @@ MonoBehaviour:
     m_Address: ElectricEll
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 76d58e992e0868243b2af393a2ee0206
+    m_Address: SpriteNone
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: c2be613483e847b41829fe1dba212816, type: 2}
   m_SchemaSet:

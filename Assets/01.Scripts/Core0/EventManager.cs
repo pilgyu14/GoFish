@@ -5,7 +5,7 @@ using UnityEngine;
 
 public enum EventsType
 {
-
+    SetDeckCard, // 덱카드설정(게임 시작시) 
     ClearEvents = 1000, 
 }
 

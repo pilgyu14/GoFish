@@ -7,7 +7,7 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 {
     private CanvasGroup _canvasGroup;
     [SerializeField]
-    private RectTransform _canvas;
+    private Transform _canvas;
     private Transform _prevParent;
     private RectTransform _rectTrm;
 
@@ -15,7 +15,7 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     private void Awake()
     {
         _canvasGroup = GetComponent<CanvasGroup>();
-        _canvas = transform.root.GetComponent<RectTransform>();
+        _canvas = GameObject.Find("CardSelectCanvas").transform;
         _rectTrm = GetComponent<RectTransform>();
         _cardObj = GetComponent<CardObj>();
     }
@@ -27,6 +27,7 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     {
         _prevParent = transform.parent;
 
+        Debug.Log(transform.root); 
         transform.SetParent(_canvas);
         transform.SetAsLastSibling();
 

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
 
-public class CardObj : MonoBehaviour, IPointerClickHandler 
+public class CardObj : PoolableObject, IPointerClickHandler
 {
     [SerializeField]
     private Image _cardImage;
@@ -28,8 +28,13 @@ public class CardObj : MonoBehaviour, IPointerClickHandler
         }
     }
 
+    /// <summary>
+    /// 카드 데이터 설정 
+    /// </summary>
+    /// <param name="cardData"></param>
     public void SetCardData(CardData cardData)
     {
+
         _cardData = cardData; 
         _battleManager ??= FindObjectOfType<BattleManager>(); 
 
@@ -53,7 +58,10 @@ public class CardObj : MonoBehaviour, IPointerClickHandler
     /// <param name="eventData"></param>
     public void OnPointerClick(PointerEventData eventData)
     {
-        //_battleManager.CardComponent
+        _battleManager.CardComponent.SelectCard(this); 
     }
 
+    public override void Reset()
+    {
+    }
 }
