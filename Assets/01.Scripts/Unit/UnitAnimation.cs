@@ -14,8 +14,8 @@ public class UnitAnimation : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         hashAttack = Animator.StringToHash("Attack");
-        hashAttack = Animator.StringToHash("Death");
-        hashAttack = Animator.StringToHash("Walk");
+        hashDeath = Animator.StringToHash("Death");
+        hashWalk = Animator.StringToHash("Walk");
     }
 
     public void AttackAnimation()
