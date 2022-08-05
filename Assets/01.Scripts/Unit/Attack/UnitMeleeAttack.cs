@@ -18,7 +18,7 @@ public class UnitMeleeAttack : UnitAttack
         if (target != null)
             target.GetHit(Data.atkDamage);
         else
-            GameManager.instance.FishHomeHP(Data.atkDamage);
+            GameManager.Instance.FishHomeHP(Data.atkDamage);
         yield return new WaitForSeconds(Data.beforeDelay);
         isCanAttack = true;
     }

@@ -26,6 +26,12 @@ public class UnitScript : PoolableObject
     public Vector3 destination;
     #endregion
 
+    private void Awake()
+    {
+        currentHP = unitData.hp;
+        currentSpeed = unitData.moveSpeed;
+    }
+
     private void Update()
     {
         FindTarget();

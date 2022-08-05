@@ -46,7 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07e3128cc83639439873ea8a6390280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitions: []
+  transitions:
+  - {fileID: 1031715546007015902}
+  - {fileID: 1031715546150773962}
 --- !u!1 &1031715546007015896
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +97,7 @@ MonoBehaviour:
   UnitDecisions:
   - {fileID: 1031715546007015901}
   nextState: {fileID: 1031715547519272203}
-  condition: 0
+  condition: 1
 --- !u!114 &1031715546007015901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,8 +155,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ccdb7971d96e4148a8aa9ef6466508d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UnitDecisions: []
-  nextState: {fileID: 0}
+  UnitDecisions:
+  - {fileID: 1031715546150773963}
+  nextState: {fileID: 1031715547328982234}
   condition: 1
 --- !u!114 &1031715546150773963
 MonoBehaviour:
@@ -213,7 +216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ccdb7971d96e4148a8aa9ef6466508d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UnitDecisions: []
+  UnitDecisions:
+  - {fileID: 1031715546163212293}
   nextState: {fileID: 1031715545806542204}
   condition: 0
 --- !u!114 &1031715546163212293
@@ -507,7 +511,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e930be045eed92f43a94c0cb1b70ad2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitions: []
+  transitions:
+  - {fileID: 1031715546809389232}
 --- !u!1 &1031715547469177617
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,7 +619,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dfb20f45b77ce74b80b57499c1afad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitions: []
+  transitions:
+  - {fileID: 1031715547172295025}
 --- !u!1 &1917341770580759233
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,7 +669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 724799a20ac75da43af9ae5476dfdec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 0}
+  currentState: {fileID: 1031715547024858936}
   dir: {x: 0, y: 0, z: 0}
 --- !u!1 &1917341772017960523
 GameObject:
