@@ -12,9 +12,9 @@ public class UnitDataSO : ScriptableObject
     public bool isGroundAtk;
     
     [Header("스탯")]
-    public readonly float moveSpeed;
-    public readonly float hp;
-    public readonly float cost;
+    public float moveSpeed;
+    public float hp;
+    public float cost;
 
     [Header("공격관련")]
     public float atkDamage;

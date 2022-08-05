@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class UnitScript : PoolableObject
 {
-    [SerializeField] protected readonly UnitDataSO unitData;
+    [SerializeField] protected UnitDataSO unitData;
     public UnitDataSO UnitData => unitData;
 
     [SerializeField] protected UnitAI unitAI;
